@@ -1,0 +1,10 @@
+name = "ComorbidityIndexes"
+uuid = "8081ba79-97b3-4f84-b1e0-38db6af31483"
+authors = ["Tim Badgery-Parker <tim.badgeryparker@mq.edu.au>"]
+version = "0.1.0"
+
+[deps]
+ICD10Utilities = "a5155d9d-3c76-4eba-bc5b-258230ab014d"
+
+[compat]
+julia = "1.5"
