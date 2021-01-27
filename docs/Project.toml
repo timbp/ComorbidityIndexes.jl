@@ -1,5 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+ICD10Utilities = "a5155d9d-3c76-4eba-bc5b-258230ab014d"
 
 [compat]
 Documenter = "0.26"
