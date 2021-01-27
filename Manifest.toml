@@ -96,9 +96,9 @@ uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
 
 [[ICD10Utilities]]
 deps = ["CSV", "CategoricalArrays", "DataFrames", "Dates", "FileIO", "JLD2", "Missings", "TypedTables"]
-git-tree-sha1 = "7fe191e367ef8f6771ddb99558956e83e389be59"
-repo-rev = "v0.1.4"
-repo-url = "https://github.com/timbp/ICD10Utilities.jl"
+git-tree-sha1 = "50911e83af7c2c62942bfa61cf260fea36b6917d"
+repo-rev = "main"
+repo-url = "https://github.com/timbp/ICD10Utilities.jl.git"
 uuid = "a5155d9d-3c76-4eba-bc5b-258230ab014d"
 version = "0.1.4"
 
