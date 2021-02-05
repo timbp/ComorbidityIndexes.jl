@@ -146,5 +146,4 @@ QuanCCIICD10 = (myocardialinfarction=(ICD10["I21", "I22",], ICD10["I25.2"]),
                                 ICD10["I85.0", "I85.9", "I86.4", "I98.2", "K70.4", "K71.1",
                                       "K72.1", "K72.9", "K76.5", "K76.6", "K76.7"]),
                 metastatictumour=(ICD10["C77", "C78", "C79", "C80"], ICD10[]),
-                hivaids=(ICD10["B20", "B21", "B22", "B24"], ICD10[])
-                )
+                hivaids=(ICD10["B20", "B21", "B22", "B24"], ICD10[]))
