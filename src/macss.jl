@@ -459,7 +459,7 @@ const MACSS = (tuberculosis=ICD10AM["A15", "A15.0", "A15.1", "A15.2", "A15.3", "
                                        "I25.10", "I25.11", "I25.12", "I25.13", "I25.3",
                                        "I25.4", "I25.5", "I25.6", "I25.8", "I25.9", "T82.1",
                                        "T82.2", "T82.3", "T82.5"],
-         chronicpulmonarydis=ICD10AM["I27", "I27.0", "I27.1", "I27.2", "I27.8", "I27.9",
+         chronicpulmonarycircdis=ICD10AM["I27", "I27.0", "I27.1", "I27.2", "I27.8", "I27.9",
                                      "I28.9"],
          valvulardis=ICD10AM["I05.0", "I05.1", "I05.2", "I05.8", "I05.9", "I06", "I06.0",
                              "I06.1", "I06.2", "I06.8", "I06.9", "I07", "I07.0", "I07.1",
@@ -768,39 +768,39 @@ const MACSS = (tuberculosis=ICD10AM["A15", "A15.0", "A15.1", "A15.2", "A15.3", "
                                   "M90.02", "M90.03", "M90.04", "M90.05", "M90.06",
                                   "M90.07", "M90.08", "M90.09"])
 
-macss = DataFrame(XLSX.readtable("C:\\Users\\timbp\\Downloads\\ICD-10-AM_MACSS_coding\\ICD-10-AM_MACSS_coding.xlsx",
-                                 "ICD-10-AM MACSS coding"; infer_eltypes=true)...)
+# macss = DataFrame(XLSX.readtable("C:\\Users\\timbp\\Downloads\\ICD-10-AM_MACSS_coding\\ICD-10-AM_MACSS_coding.xlsx",
+#                                  "ICD-10-AM MACSS coding"; infer_eltypes=true)...)
 
-m = macss[:, "MACSS coding"][macss[:, "ICD-10-AM"] .== "Z99.2", :]
+# m = macss[:, "MACSS coding"][macss[:, "ICD-10-AM"] .== "Z99.2", :]
 
-rename!(macss, ["ICD10AMcode", "MACSScondition", "MACSSlabel"])
+# rename!(macss, ["ICD10AMcode", "MACSScondition", "MACSSlabel"])
 
-filter!(:MACSSlabel => !ismissing, macss)
+# filter!(:MACSSlabel => !ismissing, macss)
 
-disallowmissing!(macss)
+# disallowmissing!(macss)
 
-macss.MACSScondition = Int8.(macss.MACSScondition)
+# macss.MACSScondition = Int8.(macss.MACSScondition)
 
-# namemap = Dict{String,Symbol}(
-#   "Septicemia" => :septicemia,
-#   "Tuberculosis" => :tuberculosis,
-#   "Other bacterial infections" => :otherbactinfect,
-#   "HIV or AIDS" => :hivaids,
-#   "Candidiasis" => :candidiasis,
-#   "Systemic mycosis" => :mycosis,
-#   "Other primary cancer" => :otherprimarycancer,
-#   "Lung cancer" => :lungcancer,
-#   "Breast cancer" => :breastcancer,
-#   "Secondary cancer of lymph nodes" => :secondarycancer_lymph,
-#   "Other secondary cancer" => :secondarycancer,
-#   "Lymphoma or leukemia" => :lymphoma,
-#   "Benign neoplasms of the colon or rectum" => :benigncolorectalneoplasm,
-#   "Uterine leiomyoma" => :uterineleiomyoma,
-#   "Hypothyroidism" => :hypothyroidism,
-#   "Diabetes mellitus" => :diabetes,
-#   "Complications of diabetes" => :diabetes_comp,
-#   "Malnutrition or cachexia" => :malnutrition,
-#   "Avitaminosis" => :avitaminosis,
-#   "Gout" => :gout,
+# # namemap = Dict{String,Symbol}(
+# #   "Septicemia" => :septicemia,
+# #   "Tuberculosis" => :tuberculosis,
+# #   "Other bacterial infections" => :otherbactinfect,
+# #   "HIV or AIDS" => :hivaids,
+# #   "Candidiasis" => :candidiasis,
+# #   "Systemic mycosis" => :mycosis,
+# #   "Other primary cancer" => :otherprimarycancer,
+# #   "Lung cancer" => :lungcancer,
+# #   "Breast cancer" => :breastcancer,
+# #   "Secondary cancer of lymph nodes" => :secondarycancer_lymph,
+# #   "Other secondary cancer" => :secondarycancer,
+# #   "Lymphoma or leukemia" => :lymphoma,
+# #   "Benign neoplasms of the colon or rectum" => :benigncolorectalneoplasm,
+# #   "Uterine leiomyoma" => :uterineleiomyoma,
+# #   "Hypothyroidism" => :hypothyroidism,
+# #   "Diabetes mellitus" => :diabetes,
+# #   "Complications of diabetes" => :diabetes_comp,
+# #   "Malnutrition or cachexia" => :malnutrition,
+# #   "Avitaminosis" => :avitaminosis,
+# #   "Gout" => :gout,
 
-# )
+# # )
