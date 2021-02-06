@@ -1,8 +1,8 @@
-include("quan.jl")
-include("macss.jl")
+include("../quan.jl")
+include("../macss.jl")
 
 const comorbiditylists = Dict{Symbol, NamedTuple}(
-  :quan_elixhauser => QuanElixICD10,
-  :quan_charlson => QuanCCIICD10,
+  :elixhauser => ElixICD10,
+  :charlson => CharlsonICD10,
   :macss => MACSS
 )

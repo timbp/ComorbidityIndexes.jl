@@ -2,12 +2,12 @@ module ComorbidityIndexes
 
 using ICD10Utilities
 
-export QuanElixICD10
-export QuanCCIICD10
+export comorbiditylists
+
 export flagcomorbidities
 
 # comorbidity codes
-include("quan.jl")
+include("comorbiditylists.jl")
 
 # functions
 
@@ -24,7 +24,7 @@ Returns NamedTuple giving true or false for each comorbidity.
 Weights, summed score, not provided.
 """
 function flagcomorbidities(icdcodes, comorbidities)
-  return _quan(icdcodes, CMRB[comorbidities])
+  return _quan(icdcodes, comorbiditylists[comorbidities])
 end
 
 function _quan(icdcodes, comorbidities)
@@ -33,14 +33,19 @@ function _quan(icdcodes, comorbidities)
     RET[cmrb] = any(icd -> icd3(icd) in icd3.(comorbidities[cmrb][1]), icdcodes) ||
                 any(icd -> icd4(icd) in icd4.(comorbidities[cmrb][2]), icdcodes)
   end
+
   if RET[:diabetes_comp]
     RET[:diabetes] = false
   end
-  if RET[:severeliverdis]
+  if haskey(RET, :severeliverdis) && RET[:severeliverdis]
     RET[:liverdisease] = false
   end
   if RET[:metastaticcancer]
-    RET[:malignancy] = false
+    if haskey(RET, :malignancy)
+      RET[:malignancy] = false
+    elseif haskey(RET, :solidtumor)
+      RET[:solidtumor] = false
+    end
   end
   return RET
 end
